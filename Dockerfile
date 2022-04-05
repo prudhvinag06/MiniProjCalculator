@@ -1,4 +1,3 @@
 FROM openjdk:11
-ADD target/my-maven-docker-project.jar my-maven-docker-project.jar
-ENTRYPOINT ["java", "-jar","my-maven-docker-project.jar"]
-EXPOSE 9080
+COPY target/calculator-1.0-SNAPSHOT.jar calculator-1.0-SNAPSHOT.jar
+CMD ["java","-cp","calculator-1.0-SNAPSHOT.jar", "Calculator"]
